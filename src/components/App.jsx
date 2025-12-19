@@ -49,18 +49,15 @@ function App() {
 
     // Set up event listeners
     audio.addEventListener('ended', () => {
-      console.log('Audio ended');
       setCurrentAudio(null);
     });
 
-    audio.addEventListener('error', (e) => {
-      console.error('Audio load error:', e);
+    audio.addEventListener('error', () => {
       setAudioError(true);
     });
 
     // Play audio immediately (synchronously with user gesture)
     audio.play().catch((err) => {
-      console.error('Audio playback failed:', err);
       // Only show error for real failures, not autoplay blocks
       const isAutoplayBlock = err?.name === 'NotAllowedError' || err?.message?.includes('play() request was interrupted');
       if (!isAutoplayBlock) {

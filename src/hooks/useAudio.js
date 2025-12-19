@@ -44,7 +44,6 @@ export function useAudio() {
       setError(null);
     } catch (err) {
       // Handle autoplay policy rejection
-      console.warn('Audio playback failed:', err);
       setError(err);
       setAudioAvailable(false);
       setIsPlaying(false);
