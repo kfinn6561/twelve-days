@@ -24,13 +24,13 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Verify React app is initialized with Vite in frontend/ directory
-- [ ] T002 [P] Install testing dependencies (Jest, React Testing Library, Playwright) per quickstart.md
-- [ ] T003 [P] Configure Jest with jsdom environment in frontend/jest.config.js
-- [ ] T004 [P] Configure Playwright for E2E tests in frontend/playwright.config.js
-- [ ] T005 [P] Create test mocks directory frontend/tests/__mocks__/ with audio.js and image.js mocks
-- [ ] T006 [P] Set up ESLint configuration in frontend/eslint.config.js
-- [ ] T007 [P] Create frontend/tests/setup.js for test environment configuration
+- [x] T001 Verify React app is initialized with Vite in frontend/ directory
+- [x] T002 [P] Install testing dependencies (Jest, React Testing Library, Playwright) per quickstart.md
+- [x] T003 [P] Configure Jest with jsdom environment in frontend/jest.config.js
+- [x] T004 [P] Configure Playwright for E2E tests in frontend/playwright.config.js
+- [x] T005 [P] Create test mocks directory frontend/tests/__mocks__/ with audio.js and image.js mocks
+- [x] T006 [P] Set up ESLint configuration in frontend/eslint.config.js
+- [x] T007 [P] Create frontend/tests/setup.js for test environment configuration
 
 ---
 
