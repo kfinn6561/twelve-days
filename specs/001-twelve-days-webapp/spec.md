@@ -15,7 +15,7 @@
 - Q: How should the twelve gifts be arranged on the page? → A: Scattered around the page in a visually pleasing manner
 - Q: How should the app handle gift images that fail to load? → A: Replace with ASCII art
 - Q: How should the gift layout adapt for mobile devices (screen width < 768px)? → A: Keep scattered layout but scale down gift sizes to fit viewport
-- Q: How long should the hover animation last (bounce/float cycle)? → A: Desktop: continuous animation while hovering; Mobile: 1 second duration
+- Q: How long should the hover animation last (bounce/float cycle)? → A: Desktop: continuous animation while hovering; Mobile: play entire audio and keep bouncing until audio finishes
 - Q: What are the minimum browser versions that must be supported? → A: Last 2 major versions of each browser (Chrome, Firefox, Safari)
 - Q: If a user hovers briefly (less than 0.5 seconds), should the audio still play or be cancelled? → A: Play audio but stop immediately when hover ends, regardless of duration
 - Q: What visual indicator should show that gifts are interactive (before user hovers)? → A: Change cursor to pointer (hand icon) when hovering over gifts
@@ -101,9 +101,10 @@ When users hover over a gift, the corresponding lyrics line from that specific g
 - **FR-002**: System MUST respond to mouse hover events on each gift image
 - **FR-003**: System MUST animate gift images with a bounce or gentle floating motion when hovered over
 - **FR-003a**: On desktop devices, animation MUST continue as a loop while the mouse remains hovering over the gift
-- **FR-003b**: On mobile devices, animation MUST play for exactly 1 second after touch, then stop even if touch continues
+- **FR-003b**: On mobile devices, animation MUST continue bouncing until the corresponding audio verse has finished playing completely
 - **FR-004**: System MUST play audio of the corresponding verse when a gift is hovered
-- **FR-004a**: System MUST stop audio playback immediately when hover ends, regardless of how long the user hovered or how much audio has played
+- **FR-004a**: On desktop devices, system MUST stop audio playback immediately when hover ends, regardless of how long the user hovered or how much audio has played
+- **FR-004b**: On mobile devices, system MUST play the entire audio verse to completion after touch, even if the user's touch ends before audio finishes
 - **FR-005**: System MUST display the specific gift's lyrics line at the top of the screen when a gift is hovered (e.g., "Two turtle doves" for Day 2, not the cumulative verse)
 - **FR-006**: System MUST stop previous audio playback when a new gift is hovered
 - **FR-007**: System MUST return gifts to their original visual state when hover ends
