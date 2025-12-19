@@ -78,19 +78,19 @@
 
 ### Tests
 
-- [ ] T023 [P] [US2] Create test for hover event handling in frontend/tests/components/GiftCard.test.jsx
-- [ ] T024 [P] [US2] Create test for touch event handling in frontend/tests/components/GiftCard.test.jsx
-- [ ] T025 [P] [US2] Create test for desktop vs mobile animation duration in frontend/tests/components/GiftCard.test.jsx
+- [x] T023 [P] [US2] Create test for hover event handling in frontend/tests/components/GiftCard.test.jsx
+- [x] T024 [P] [US2] Create test for touch event handling in frontend/tests/components/GiftCard.test.jsx
+- [x] T025 [P] [US2] Create test for desktop vs mobile animation duration in frontend/tests/components/GiftCard.test.jsx
 
 ### Implementation
 
-- [ ] T026 [US2] Add CSS animations (bounce/float keyframes) in frontend/src/styles/animations.css
-- [ ] T027 [US2] Update GiftCard component to handle onMouseEnter, onMouseLeave, onTouchStart, onTouchEnd events
-- [ ] T028 [US2] Add animation state management to GiftCard (isHovered state, apply CSS class)
-- [ ] T029 [US2] Add cursor:pointer CSS to gifts in frontend/src/styles/App.css
-- [ ] T030 [US2] Implement desktop: continuous animation loop while hovering logic
-- [ ] T031 [US2] Test US2: Verify hover animations work on desktop (continuous loop)
-- [ ] T032 [US2] Test US2: Verify touch animations work on mobile (duration matches audio length - deferred to US3)
+- [x] T026 [US2] Add CSS animations (bounce/float keyframes) in frontend/src/styles/animations.css
+- [x] T027 [US2] Update GiftCard component to handle onMouseEnter, onMouseLeave, onTouchStart, onTouchEnd events
+- [x] T028 [US2] Add animation state management to GiftCard (isHovered state, apply CSS class)
+- [x] T029 [US2] Add cursor:pointer CSS to gifts in frontend/src/styles/App.css
+- [x] T030 [US2] Implement desktop: continuous animation loop while hovering logic
+- [x] T031 [US2] Test US2: Verify hover animations work on desktop (continuous loop)
+- [x] T032 [US2] Test US2: Verify touch animations work on mobile (duration matches audio length - deferred to US3)
 
 ---
 
