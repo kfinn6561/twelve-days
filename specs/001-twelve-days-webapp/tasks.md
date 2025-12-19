@@ -40,10 +40,10 @@
 
 - [ ] T008 Source 12 gift images from internet (Unsplash/public domain) and place in frontend/public/assets/images/
 - [ ] T009 Obtain complete "Twelve Days of Christmas" recording and split into 12 audio segments in frontend/public/assets/audio/ (day-1.mp3 through day-12.mp3)
-- [ ] T010 Create gifts data structure in frontend/src/data/giftsData.js with all 12 gift objects (id, name, lyrics, imagePath, audioPath, position)
-- [ ] T011 Create ASCII art fallbacks for all 12 gifts in frontend/src/data/asciiArt.js
-- [ ] T012 [P] Create base CSS file frontend/src/styles/App.css with scattered layout grid and responsive mobile scaling
-- [ ] T013 [P] Implement platform detection utility in frontend/src/services/platformDetection.js (desktop vs mobile)
+- [x] T010 Create gifts data structure in frontend/src/data/giftsData.js with all 12 gift objects (id, name, lyrics, imagePath, audioPath, position)
+- [x] T011 Create ASCII art fallbacks for all 12 gifts in frontend/src/data/asciiArt.js
+- [x] T012 [P] Create base CSS file frontend/src/styles/App.css with scattered layout grid and responsive mobile scaling
+- [x] T013 [P] Implement platform detection utility in frontend/src/services/platformDetection.js (desktop vs mobile)
 
 ---
 
