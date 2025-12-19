@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import GiftCard from './GiftCard';
+import GiftDetailPage from './GiftDetailPage';
 import AudioIndicator from './AudioIndicator';
 import AudioPermissionPrompt from './AudioPermissionPrompt';
 import LyricsDisplay from './LyricsDisplay';
@@ -91,21 +92,13 @@ function App() {
     navigate(`/gift/${giftId}`);
   };
 
-  // Detail page route (temporarily just shows text, full implementation in Phase 4)
+  // Detail page route
   if (route.type === 'detail') {
     return (
-      <div className="detail-page">
-        <button
-          className="back-button"
-          onClick={() => navigate('/')}
-        >
-          ← Back
-        </button>
-        <div style={{ padding: '100px 20px', textAlign: 'center' }}>
-          <h1>Gift #{route.id} Detail Page</h1>
-          <p>Content will be implemented in Phase 4</p>
-        </div>
-      </div>
+      <GiftDetailPage
+        giftId={route.id}
+        onBack={() => navigate('/')}
+      />
     );
   }
 

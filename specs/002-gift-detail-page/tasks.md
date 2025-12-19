@@ -87,10 +87,10 @@
 
 ### Implementation for User Story 2
 
-- [ ] T020 [P] [US2] Create GiftDetailContent component in src/components/GiftDetailContent.jsx
-- [ ] T021 [US2] Create GiftDetailPage component integrating content loader and display in src/components/GiftDetailPage.jsx
-- [ ] T022 [US2] Update App component to render GiftDetailPage for detail routes in src/components/App.jsx
-- [ ] T023 [US2] Verify all 12 gifts have complete content with 4 sections (data validation)
+- [x] T020 [P] [US2] Create GiftDetailContent component in src/components/GiftDetailContent.jsx
+- [x] T021 [US2] Create GiftDetailPage component integrating content loader and display in src/components/GiftDetailPage.jsx
+- [x] T022 [US2] Update App component to render GiftDetailPage for detail routes in src/components/App.jsx
+- [x] T023 [US2] Verify all 12 gifts have complete content with 4 sections (data validation)
 
 **Checkpoint**: At this point, detail pages display full Wikipedia-style content for all 12 gifts. Content can be viewed independently of navigation features.
 
