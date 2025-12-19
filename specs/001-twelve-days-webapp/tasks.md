@@ -102,26 +102,26 @@
 
 ### Tests
 
-- [ ] T033 [P] [US3] Create test for audioService in frontend/tests/services/audioService.test.js (desktop immediate stop, mobile full playback)
-- [ ] T034 [P] [US3] Create test for useAudio hook in frontend/tests/unit/hooks.test.js
-- [ ] T035 [P] [US3] Create test for AudioPlayer component in frontend/tests/components/AudioPlayer.test.jsx
-- [ ] T036 [P] [US3] Create test for audio autoplay detection and error handling in frontend/tests/services/audioService.test.js
+- [x] T033 [P] [US3] Create test for audioService in frontend/tests/services/audioService.test.js (desktop immediate stop, mobile full playback)
+- [x] T034 [P] [US3] Create test for useAudio hook in frontend/tests/unit/hooks.test.js
+- [x] T035 [P] [US3] Create test for AudioPlayer component in frontend/tests/components/AudioPlayer.test.jsx
+- [x] T036 [P] [US3] Create test for audio autoplay detection and error handling in frontend/tests/services/audioService.test.js
 
 ### Implementation
 
-- [ ] T037 [US3] Implement audioService.js in frontend/src/services/audioService.js (play, stop, autoplay detection, desktop vs mobile logic)
-- [ ] T038 [US3] Implement useAudio custom hook in frontend/src/hooks/useAudio.js (wraps audioService, manages audio state)
-- [ ] T039 [US3] Create AudioPlayer component in frontend/src/components/AudioPlayer.jsx (functional component, no UI)
-- [ ] T040 [US3] Create AudioIndicator component in frontend/src/components/AudioIndicator.jsx (shows when audio unavailable)
-- [ ] T041 [US3] Update App component to manage audio state (currentAudio, audioAvailable, audioError)
-- [ ] T042 [US3] Update GiftCard to call onHover/onUnhover callbacks passing gift data
-- [ ] T043 [US3] Implement desktop audio behavior: stop immediately when hover ends (in audioService.js)
-- [ ] T044 [US3] Implement mobile audio behavior: play full audio even if touch ends early (in audioService.js)
-- [ ] T045 [US3] Update mobile animation logic: continue bouncing until audio completes (sync animation duration to audio playback)
-- [ ] T046 [US3] Implement logic to stop previous audio when new gift is hovered (in App component)
-- [ ] T047 [US3] Test US3: Verify audio plays correctly on desktop (stops on unhover)
-- [ ] T048 [US3] Test US3: Verify audio plays correctly on mobile (full playback with synchronized animation)
-- [ ] T049 [US3] Test US3: Verify audio unavailable indicator shows when autoplay is blocked
+- [x] T037 [US3] Implement audioService.js in frontend/src/services/audioService.js (play, stop, autoplay detection, desktop vs mobile logic)
+- [x] T038 [US3] Implement useAudio custom hook in frontend/src/hooks/useAudio.js (wraps audioService, manages audio state)
+- [x] T039 [US3] Create AudioPlayer component in frontend/src/components/AudioPlayer.jsx (functional component, no UI)
+- [x] T040 [US3] Create AudioIndicator component in frontend/src/components/AudioIndicator.jsx (shows when audio unavailable)
+- [x] T041 [US3] Update App component to manage audio state (currentAudio, audioAvailable, audioError)
+- [x] T042 [US3] Update GiftCard to call onHover/onUnhover callbacks passing gift data
+- [x] T043 [US3] Implement desktop audio behavior: stop immediately when hover ends (in audioService.js)
+- [x] T044 [US3] Implement mobile audio behavior: play full audio even if touch ends early (in audioService.js)
+- [x] T045 [US3] Update mobile animation logic: continue bouncing until audio completes (sync animation duration to audio playback)
+- [x] T046 [US3] Implement logic to stop previous audio when new gift is hovered (in App component)
+- [x] T047 [US3] Test US3: Verify audio plays correctly on desktop (stops on unhover)
+- [x] T048 [US3] Test US3: Verify audio plays correctly on mobile (full playback with synchronized animation)
+- [x] T049 [US3] Test US3: Verify audio unavailable indicator shows when autoplay is blocked
 
 ---
 
@@ -133,19 +133,19 @@
 
 ### Tests
 
-- [ ] T050 [P] [US4] Create test for LyricsDisplay component in frontend/tests/components/LyricsDisplay.test.jsx
-- [ ] T051 [P] [US4] Create test for lyrics state updates in frontend/tests/components/App.test.jsx
+- [x] T050 [P] [US4] Create test for LyricsDisplay component in frontend/tests/components/LyricsDisplay.test.jsx
+- [x] T051 [P] [US4] Create test for lyrics state updates in frontend/tests/components/App.test.jsx
 
 ### Implementation
 
-- [ ] T052 [US4] Create LyricsDisplay component in frontend/src/components/LyricsDisplay.jsx (displays lyrics at top, smooth transitions)
-- [ ] T053 [US4] Add CSS for lyrics display in frontend/src/styles/lyrics.css (fixed position, centered, smooth opacity transition)
-- [ ] T054 [US4] Update App component to manage currentLyrics state
-- [ ] T055 [US4] Update App to render LyricsDisplay component at top of viewport
-- [ ] T056 [US4] Update gift hover handlers in App to set currentLyrics
-- [ ] T057 [US4] Update unhover handlers in App to clear lyrics
-- [ ] T058 [US4] Test US4: Verify lyrics display correctly for all 12 gifts
-- [ ] T059 [US4] Test US4: Verify lyrics clear when hover ends
+- [x] T052 [US4] Create LyricsDisplay component in frontend/src/components/LyricsDisplay.jsx (displays lyrics at top, smooth transitions)
+- [x] T053 [US4] Add CSS for lyrics display in frontend/src/styles/lyrics.css (fixed position, centered, smooth opacity transition)
+- [x] T054 [US4] Update App component to manage currentLyrics state
+- [x] T055 [US4] Update App to render LyricsDisplay component at top of viewport
+- [x] T056 [US4] Update gift hover handlers in App to set currentLyrics
+- [x] T057 [US4] Update unhover handlers in App to clear lyrics
+- [x] T058 [US4] Test US4: Verify lyrics display correctly for all 12 gifts
+- [x] T059 [US4] Test US4: Verify lyrics clear when hover ends
 
 ---
 
