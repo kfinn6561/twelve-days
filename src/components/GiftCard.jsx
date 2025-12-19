@@ -9,9 +9,8 @@ import '../styles/layout.css';
  * @param {Object} props.gift - Gift data object
  * @param {Function} props.onHover - Callback when hover/touch starts
  * @param {Function} props.onUnhover - Callback when hover/touch ends
- * @param {boolean} props.isPlaying - Whether this gift's audio is currently playing
  */
-function GiftCard({ gift, onHover, onUnhover, isPlaying = false }) {
+function GiftCard({ gift, onHover, onUnhover }) {
   const { src, loading, error } = useImageFallback(gift.imagePath, gift.asciiArt);
   const [isHovered, setIsHovered] = useState(false);
 

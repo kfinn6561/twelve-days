@@ -96,7 +96,6 @@ function App() {
             gift={gift}
             onHover={handleGiftHover}
             onUnhover={handleGiftUnhover}
-            isPlaying={currentAudio === gift.id}
           />
         ))}
       </div>
