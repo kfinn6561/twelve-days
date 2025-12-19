@@ -1,0 +1,28 @@
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.back-button:hover {
+  background: #fff;
+  border-color: #999;
+}
+
+.back-button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.back-button:active {
+  transform: translateY(1px);
+}
