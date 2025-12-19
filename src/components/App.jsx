@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import GiftCard from './GiftCard';
 import GiftDetailPage from './GiftDetailPage';
+import NotFound from './NotFound';
 import AudioIndicator from './AudioIndicator';
 import AudioPermissionPrompt from './AudioPermissionPrompt';
 import LyricsDisplay from './LyricsDisplay';
@@ -104,14 +105,7 @@ function App() {
 
   // 404 route
   if (route.type === 'notfound') {
-    return (
-      <div style={{ padding: '100px 20px', textAlign: 'center' }}>
-        <h1>Page Not Found</h1>
-        <button onClick={() => navigate('/')}>
-          Return to Main Page
-        </button>
-      </div>
-    );
+    return <NotFound onBack={() => navigate('/')} />;
   }
 
   // Home page route (main gift gallery)

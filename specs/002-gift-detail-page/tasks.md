@@ -110,9 +110,9 @@
 
 ### Implementation for User Story 3
 
-- [ ] T027 [US3] Integrate BackButton into GiftDetailPage with onBack callback in src/components/GiftDetailPage.jsx
-- [ ] T028 [US3] Verify browser back button works correctly with history API in src/hooks/useRouter.js
-- [ ] T029 [US3] Test direct URL access to detail pages (e.g., /gift/5) works correctly
+- [x] T027 [US3] Integrate BackButton into GiftDetailPage with onBack callback in src/components/GiftDetailPage.jsx
+- [x] T028 [US3] Verify browser back button works correctly with history API in src/hooks/useRouter.js
+- [x] T029 [US3] Test direct URL access to detail pages (e.g., /gift/5) works correctly
 
 **Checkpoint**: At this point, users can navigate back from detail pages using both "← Back" button and browser back button.
 
@@ -131,9 +131,9 @@
 
 ### Implementation for User Story 4
 
-- [ ] T032 [US4] Add gift image display to GiftDetailPage component in src/components/GiftDetailPage.jsx
-- [ ] T033 [US4] Integrate useImageFallback hook for ASCII fallback in src/components/GiftDetailPage.jsx
-- [ ] T034 [US4] Style gift image hero section in detail page layout in src/styles/detailPage.css
+- [x] T032 [US4] Add gift image display to GiftDetailPage component in src/components/GiftDetailPage.jsx
+- [x] T033 [US4] Integrate useImageFallback hook for ASCII fallback in src/components/GiftDetailPage.jsx
+- [x] T034 [US4] Style gift image hero section in detail page layout in src/styles/detailPage.css
 
 **Checkpoint**: All user stories are now independently functional. Detail pages show images with proper fallback handling.
 
@@ -146,9 +146,9 @@
 - [ ] T035 [P] Test error fallback for missing content in tests/unit/ErrorFallback.test.jsx
 - [ ] T036 [P] Test rapid click handling (last click wins) in tests/integration/rapidClicks.test.jsx
 - [ ] T037 Test 404 handling for invalid URLs in tests/integration/notFound.test.jsx
-- [ ] T038 Implement NotFound component for invalid routes in src/components/NotFound.jsx
-- [ ] T039 Update App component to render NotFound for unmatched routes in src/components/App.jsx
-- [ ] T040 Verify error fallback displays for missing content in src/components/GiftDetailPage.jsx
+- [x] T038 Implement NotFound component for invalid routes in src/components/NotFound.jsx
+- [x] T039 Update App component to render NotFound for unmatched routes in src/components/App.jsx
+- [x] T040 Verify error fallback displays for missing content in src/components/GiftDetailPage.jsx
 
 ---
 
@@ -158,14 +158,14 @@
 
 - [ ] T041 [P] E2E test for complete user journey through multiple detail pages in tests/e2e/giftDetailJourney.spec.js
 - [ ] T042 [P] Test mobile responsive layout (320px to 1920px) in tests/e2e/responsive.spec.js
-- [ ] T043 [P] Validate content structure for all 12 gifts (automated check)
-- [ ] T044 Performance testing: verify navigation <1s, page load <2s
+- [x] T043 [P] Validate content structure for all 12 gifts (automated check)
+- [x] T044 Performance testing: verify navigation <1s, page load <2s
 - [ ] T045 [P] Accessibility audit: keyboard navigation, focus indicators, ARIA labels
 - [ ] T046 [P] Code cleanup and refactoring across all components
-- [ ] T047 Run linter and fix all warnings: npm run lint
-- [ ] T048 Run full test suite and verify 100% pass: npm test
-- [ ] T049 Build production bundle and verify size <90 KB gzipped: npm run build
-- [ ] T050 Manual QA checklist validation per quickstart.md
+- [x] T047 Run linter and fix all warnings: npm run lint
+- [x] T048 Run full test suite and verify 100% pass: npm test
+- [x] T049 Build production bundle and verify size <90 KB gzipped: npm run build
+- [x] T050 Manual QA checklist validation per quickstart.md
 
 ---
 
