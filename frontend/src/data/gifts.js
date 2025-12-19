@@ -12,7 +12,7 @@ export const gifts = [
   🐦
 Partridge
     `,
-    position: { x: 50, y: 50 }
+    position: { x: 90, y: 50 }  // Rightmost
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ Partridge
   🕊️  🕊️
 Turtle Doves
     `,
-    position: { x: 20, y: 30 }
+    position: { x: 85, y: 75 }
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ French Hens
 🐦🐦
 Calling Birds
     `,
-    position: { x: 15, y: 70 }
+    position: { x: 75, y: 60 }
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ Calling Birds
  ⭕⭕
 Golden Rings
     `,
-    position: { x: 50, y: 20 }
+    position: { x: 65, y: 40 }
   },
   {
     id: 6,
@@ -80,7 +80,7 @@ Golden Rings
 🦆🦆🦆
 Geese A-laying
     `,
-    position: { x: 75, y: 60 }
+    position: { x: 50, y: 50 }
   },
   {
     id: 7,
@@ -94,7 +94,7 @@ Geese A-laying
   🦢🦢🦢
 Swans A-swimming
     `,
-    position: { x: 30, y: 55 }
+    position: { x: 50, y: 20 }
   },
   {
     id: 8,
@@ -108,7 +108,7 @@ Swans A-swimming
 👩👩👩👩
 Maids A-milking
     `,
-    position: { x: 65, y: 40 }
+    position: { x: 40, y: 75 }
   },
   {
     id: 9,
@@ -123,7 +123,7 @@ Maids A-milking
 💃💃💃
 Ladies Dancing
     `,
-    position: { x: 40, y: 75 }
+    position: { x: 30, y: 55 }
   },
   {
     id: 10,
@@ -137,7 +137,7 @@ Ladies Dancing
 🤵🤵🤵🤵🤵
 Lords A-leaping
     `,
-    position: { x: 85, y: 75 }
+    position: { x: 20, y: 30 }
   },
   {
     id: 11,
@@ -152,7 +152,7 @@ Lords A-leaping
 🎺🎺🎺🎺
 Pipers Piping
     `,
-    position: { x: 10, y: 45 }
+    position: { x: 15, y: 70 }
   },
   {
     id: 12,
@@ -167,6 +167,6 @@ Pipers Piping
 🥁🥁🥁🥁
 Drummers Drumming
     `,
-    position: { x: 90, y: 50 }
+    position: { x: 10, y: 45 }  // Leftmost
   }
 ];
