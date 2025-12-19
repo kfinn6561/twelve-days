@@ -176,14 +176,14 @@ Copy all 12 audio files to the project directory:
 cd /Users/kieranfinn/speckit-test/test-project
 
 # Copy the files to the audio assets folder
-cp ~/Downloads/day-*.mp3 frontend/public/assets/audio/
+cp ~/Downloads/day-*.mp3 public/assets/audio/
 
 # Or use Finder to drag and drop the files
 ```
 
 **Target location:**
 ```
-frontend/public/assets/audio/
+public/assets/audio/
 ├── day-1.mp3
 ├── day-2.mp3
 ├── day-3.mp3
@@ -260,7 +260,7 @@ For reference, here's what each verse should contain:
 
 Replace the placeholder files currently located in:
 ```
-frontend/public/assets/audio/
+public/assets/audio/
 ├── day-1.mp3   (0 bytes - empty placeholder)
 ├── day-2.mp3   (0 bytes - empty placeholder)
 ├── day-3.mp3   (0 bytes - empty placeholder)

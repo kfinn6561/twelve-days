@@ -21,7 +21,6 @@ An interactive web application that brings the classic "Twelve Days of Christmas
 ### Installation
 
 ```bash
-cd frontend
 npm install
 ```
 
@@ -90,7 +89,6 @@ Tested and working in:
 ## Project Structure
 
 ```
-frontend/
 ├── src/
 │   ├── components/       # React components
 │   │   ├── App.jsx               # Main app component

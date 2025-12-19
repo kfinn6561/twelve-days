@@ -178,7 +178,7 @@ All images from these sites are free to use, even for commercial purposes, typic
 2. Browse the search results and select an image you like
 3. Download the image (preferably high resolution)
 4. Rename the file to match the format: `day-1.png`, `day-2.png`, etc.
-5. Place the image in: `/frontend/public/assets/images/`
+5. Place the image in: `/public/assets/images/`
 6. Replace the existing placeholder file
 
 ## Image Requirements
@@ -202,7 +202,7 @@ All images from these sites are free to use, even for commercial purposes, typic
 
 Replace the placeholder files currently located in:
 ```
-frontend/public/assets/images/
+public/assets/images/
 ├── day-1.png   (230 bytes - placeholder)
 ├── day-2.png   (230 bytes - placeholder)
 ├── day-3.png   (230 bytes - placeholder)
