@@ -78,6 +78,7 @@ function GiftCard({ gift, onHover, onUnhover, isPlaying = false }) {
           {gift.shortName}
         </div>
       )}
+      <div className="gift__day-number">Day {gift.id}</div>
     </div>
   );
 }

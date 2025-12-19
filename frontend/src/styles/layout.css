@@ -1,4 +1,6 @@
 /* Base layout styles */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -44,11 +46,31 @@ body {
   pointer-events: none;
 }
 
+/* Day number label under each gift */
+.gift__day-number {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
 /* Responsive design for mobile/tablet */
 @media (max-width: 768px) {
   .gift img {
     width: 60px;
     height: 60px;
+  }
+
+  .gift__day-number {
+    font-size: 18px;
+    bottom: -25px;
   }
 }
 
