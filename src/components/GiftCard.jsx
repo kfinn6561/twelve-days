@@ -38,7 +38,7 @@ function GiftCard({ gift, onHover, onUnhover, onNavigate }) {
     }
   }, [sparkles]);
 
-  const createSparkles = (event) => {
+  const createSparkles = () => {
     const card = cardRef.current;
     if (!card) return;
 
@@ -129,7 +129,7 @@ function GiftCard({ gift, onHover, onUnhover, onNavigate }) {
     e.stopPropagation();
 
     // Create sparkles at click position
-    createSparkles(e);
+    createSparkles();
 
     // Stop any current hover effects
     setIsHovered(false);
