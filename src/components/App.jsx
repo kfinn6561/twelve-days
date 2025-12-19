@@ -13,7 +13,6 @@ function App() {
   const [currentLyrics, setCurrentLyrics] = useState('');
   const [currentAudio, setCurrentAudio] = useState(null);
   const [audioError, setAudioError] = useState(false);
-  const [audioAvailable, setAudioAvailable] = useState(true);
   const [showAudioPrompt, setShowAudioPrompt] = useState(true);
   const audioRef = useRef(null);
   const audioEnabledRef = useRef(false);
@@ -57,7 +56,6 @@ function App() {
     audio.addEventListener('error', (e) => {
       console.error('Audio load error:', e);
       setAudioError(true);
-      setAudioAvailable(false);
     });
 
     // Play audio immediately (synchronously with user gesture)
@@ -67,7 +65,6 @@ function App() {
       const isAutoplayBlock = err?.name === 'NotAllowedError' || err?.message?.includes('play() request was interrupted');
       if (!isAutoplayBlock) {
         setAudioError(true);
-        setAudioAvailable(false);
       }
     });
   };
@@ -82,9 +79,6 @@ function App() {
       audioRef.current.currentTime = 0;
     }
   };
-
-  // Find currently playing gift
-  const playingGift = gifts.find(g => g.id === currentAudio);
 
   return (
     <div className="app">
