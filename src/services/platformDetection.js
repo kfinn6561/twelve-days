@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 /**
  * Platform detection utility for desktop vs mobile
  * Used to determine behavior differences (animation duration, audio handling)
@@ -61,6 +63,3 @@ export const usePlatform = () => {
     platform
   };
 };
-
-// Note: useState and useEffect would be imported from React when this file is used
-// For now, this provides the core detection logic
