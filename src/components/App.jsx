@@ -4,10 +4,13 @@ import AudioIndicator from './AudioIndicator';
 import AudioPermissionPrompt from './AudioPermissionPrompt';
 import LyricsDisplay from './LyricsDisplay';
 import { gifts } from '../data/gifts';
+import { useRouter, matchRoute } from '../hooks/useRouter';
 import '../styles/layout.css';
+import '../styles/backButton.css';
+import '../styles/detailPage.css';
 
 /**
- * App component - Root component managing global state and layout
+ * App component - Root component managing global state, layout, and routing
  */
 function App() {
   const [currentLyrics, setCurrentLyrics] = useState('');
@@ -15,6 +18,10 @@ function App() {
   const [showAudioPrompt, setShowAudioPrompt] = useState(true);
   const audioRef = useRef(null);
   const audioEnabledRef = useRef(false);
+
+  // Routing
+  const { currentPath, navigate } = useRouter();
+  const route = matchRoute(currentPath);
 
   const handleEnableAudio = () => {
     // User has clicked - this provides the necessary gesture for audio
@@ -74,6 +81,47 @@ function App() {
     }
   };
 
+  const handleGiftNavigate = (giftId) => {
+    // Stop any playing audio before navigation
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    setCurrentLyrics('');
+    navigate(`/gift/${giftId}`);
+  };
+
+  // Detail page route (temporarily just shows text, full implementation in Phase 4)
+  if (route.type === 'detail') {
+    return (
+      <div className="detail-page">
+        <button
+          className="back-button"
+          onClick={() => navigate('/')}
+        >
+          ← Back
+        </button>
+        <div style={{ padding: '100px 20px', textAlign: 'center' }}>
+          <h1>Gift #{route.id} Detail Page</h1>
+          <p>Content will be implemented in Phase 4</p>
+        </div>
+      </div>
+    );
+  }
+
+  // 404 route
+  if (route.type === 'notfound') {
+    return (
+      <div style={{ padding: '100px 20px', textAlign: 'center' }}>
+        <h1>Page Not Found</h1>
+        <button onClick={() => navigate('/')}>
+          Return to Main Page
+        </button>
+      </div>
+    );
+  }
+
+  // Home page route (main gift gallery)
   return (
     <div className="app">
       <AudioPermissionPrompt
@@ -90,6 +138,7 @@ function App() {
             gift={gift}
             onHover={handleGiftHover}
             onUnhover={handleGiftUnhover}
+            onNavigate={handleGiftNavigate}
           />
         ))}
       </div>

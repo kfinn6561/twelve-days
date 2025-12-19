@@ -64,9 +64,9 @@
 
 ### Implementation for User Story 1
 
-- [ ] T013 [US1] Modify GiftCard component to add click handler, spin animation state, and navigation callback in src/components/GiftCard.jsx
-- [ ] T014 [US1] Update App component to integrate useRouter hook and render based on route type in src/components/App.jsx
-- [ ] T015 [US1] Add URL-based routing logic to handle home and detail routes in src/components/App.jsx
+- [x] T013 [US1] Modify GiftCard component to add click handler, spin animation state, and navigation callback in src/components/GiftCard.jsx
+- [x] T014 [US1] Update App component to integrate useRouter hook and render based on route type in src/components/App.jsx
+- [x] T015 [US1] Add URL-based routing logic to handle home and detail routes in src/components/App.jsx
 
 **Checkpoint**: At this point, clicking gifts navigates to detail pages (even if empty). Navigation and spin animation work independently.
 
