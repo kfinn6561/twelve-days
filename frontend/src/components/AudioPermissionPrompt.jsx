@@ -20,9 +20,6 @@ function AudioPermissionPrompt({ show, onDismiss }) {
         <button className="audio-permission-button" onClick={onDismiss}>
           Click to Enable Audio
         </button>
-        <p className="audio-permission-hint">
-          (Required by browser - audio won't work on hover alone)
-        </p>
       </div>
     </div>
   );
