@@ -155,28 +155,28 @@
 
 ### Integration Tests
 
-- [ ] T060 [P] Create E2E test for full user flow (desktop) in frontend/tests/e2e/desktop-interaction.spec.js
-- [ ] T061 [P] Create E2E test for full user flow (mobile) in frontend/tests/e2e/mobile-interaction.spec.js
-- [ ] T062 [P] Create E2E test for audio failure scenarios in frontend/tests/e2e/edge-cases.spec.js
-- [ ] T063 [P] Create E2E test for image failure scenarios in frontend/tests/e2e/edge-cases.spec.js
+- [x] T060 [P] Create E2E test for full user flow (desktop) in frontend/tests/e2e/desktop-interaction.spec.js
+- [x] T061 [P] Create E2E test for full user flow (mobile) in frontend/tests/e2e/mobile-interaction.spec.js
+- [x] T062 [P] Create E2E test for audio failure scenarios in frontend/tests/e2e/edge-cases.spec.js
+- [x] T063 [P] Create E2E test for image failure scenarios in frontend/tests/e2e/edge-cases.spec.js
 
 ### Browser Compatibility
 
-- [ ] T064 [P] Test app in Chrome (last 2 versions)
-- [ ] T065 [P] Test app in Firefox (last 2 versions)
-- [ ] T066 [P] Test app in Safari (last 2 versions)
+- [x] T064 [P] Test app in Chrome (last 2 versions)
+- [x] T065 [P] Test app in Firefox (last 2 versions)
+- [x] T066 [P] Test app in Safari (last 2 versions)
 
 ### Performance & Optimization
 
-- [ ] T067 [P] Verify page load time <3s on standard broadband
-- [ ] T068 [P] Verify hover response <100ms
-- [ ] T069 [P] Verify audio playback starts <200ms after hover
-- [ ] T070 [P] Optimize images if needed (compress without quality loss)
+- [x] T067 [P] Verify page load time <3s on standard broadband
+- [x] T068 [P] Verify hover response <100ms
+- [x] T069 [P] Verify audio playback starts <200ms after hover
+- [x] T070 [P] Optimize images if needed (compress without quality loss)
 
 ### Documentation
 
-- [ ] T071 [P] Add README.md to frontend/ directory with setup and run instructions
-- [ ] T072 [P] Document desktop vs mobile behavior differences in README
+- [x] T071 [P] Add README.md to frontend/ directory with setup and run instructions
+- [x] T072 [P] Document desktop vs mobile behavior differences in README
 
 ---
 
