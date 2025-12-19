@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import GiftCard from './GiftCard';
-import AudioPlayer from './AudioPlayer';
 import AudioIndicator from './AudioIndicator';
 import LyricsDisplay from './LyricsDisplay';
 import { gifts } from '../data/gifts';
@@ -14,38 +13,60 @@ function App() {
   const [currentAudio, setCurrentAudio] = useState(null);
   const [audioError, setAudioError] = useState(false);
   const [audioAvailable, setAudioAvailable] = useState(true);
+  const audioRef = useRef(null);
 
   const handleGiftHover = (gift) => {
     setCurrentLyrics(gift.lyrics);
     setCurrentAudio(gift.id);
-    // Reset audio error state when user interacts (they've provided user gesture)
+
+    // Reset audio error state when user interacts
     if (audioError) {
       setAudioError(false);
     }
+
+    // Stop previous audio if playing
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    // Create and play new audio SYNCHRONOUSLY within user gesture
+    const audio = new Audio(gift.audioPath);
+    audioRef.current = audio;
+
+    // Set up event listeners
+    audio.addEventListener('ended', () => {
+      console.log('Audio ended');
+      setCurrentAudio(null);
+    });
+
+    audio.addEventListener('error', (e) => {
+      console.error('Audio load error:', e);
+      setAudioError(true);
+      setAudioAvailable(false);
+    });
+
+    // Play audio immediately (synchronously with user gesture)
+    audio.play().catch((err) => {
+      console.error('Audio playback failed:', err);
+      // Only show error for real failures, not autoplay blocks
+      const isAutoplayBlock = err?.name === 'NotAllowedError' || err?.message?.includes('play() request was interrupted');
+      if (!isAutoplayBlock) {
+        setAudioError(true);
+        setAudioAvailable(false);
+      }
+    });
   };
 
   const handleGiftUnhover = () => {
     setCurrentLyrics('');
     setCurrentAudio(null);
-  };
 
-  const handleAudioError = (error) => {
-    console.error('Audio error:', error);
-    // Only show persistent error for actual load failures, not autoplay blocks
-    // Autoplay errors are typically DOMException with name 'NotAllowedError'
-    const isAutoplayBlock = error?.name === 'NotAllowedError' || error?.message?.includes('play() request was interrupted');
-
-    if (!isAutoplayBlock) {
-      // Real error - file missing, corrupt, etc.
-      setAudioError(true);
-      setAudioAvailable(false);
+    // Stop audio on unhover (desktop behavior)
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
     }
-    // For autoplay blocks, just log but don't show error (user interaction will fix it)
-  };
-
-  const handleAudioEnded = () => {
-    // Audio finished playing naturally
-    // Keep currentAudio set so visual state remains
   };
 
   // Find currently playing gift
@@ -55,13 +76,6 @@ function App() {
     <div className="app">
       <LyricsDisplay lyrics={currentLyrics} />
       <AudioIndicator show={audioError} />
-
-      <AudioPlayer
-        audioPath={playingGift ? playingGift.audioPath : null}
-        isPlaying={currentAudio !== null}
-        onError={handleAudioError}
-        onEnded={handleAudioEnded}
-      />
 
       <div className="gift-container">
         {gifts.map(gift => (
