@@ -55,18 +55,18 @@
 
 ### Tests
 
-- [ ] T014 [P] [US1] Create test for App component rendering in frontend/tests/components/App.test.jsx
-- [ ] T015 [P] [US1] Create test for GiftCard component rendering in frontend/tests/components/GiftCard.test.jsx
-- [ ] T016 [P] [US1] Create test for image loading and fallback in frontend/tests/services/imageService.test.js
+- [x] T014 [P] [US1] Create test for App component rendering in frontend/tests/components/App.test.jsx
+- [x] T015 [P] [US1] Create test for GiftCard component rendering in frontend/tests/components/GiftCard.test.jsx
+- [x] T016 [P] [US1] Create test for image loading and fallback in frontend/tests/services/imageService.test.js
 
 ### Implementation
 
-- [ ] T017 [US1] Implement useImageFallback custom hook in frontend/src/hooks/useImageFallback.js (handles image loading, fallback to ASCII)
-- [ ] T018 [US1] Create GiftCard component in frontend/src/components/GiftCard.jsx (display gift image, position absolutely, handle image errors)
-- [ ] T019 [US1] Create App component shell in frontend/src/components/App.jsx (render 12 GiftCard components with scattered positioning)
-- [ ] T020 [US1] Update frontend/src/main.jsx to mount App component
-- [ ] T021 [US1] Add CSS for gift positioning and mobile scaling in frontend/src/styles/layout.css
-- [ ] T022 [US1] Test US1: Verify all 12 gifts display correctly on desktop and mobile
+- [x] T017 [US1] Implement useImageFallback custom hook in frontend/src/hooks/useImageFallback.js (handles image loading, fallback to ASCII)
+- [x] T018 [US1] Create GiftCard component in frontend/src/components/GiftCard.jsx (display gift image, position absolutely, handle image errors)
+- [x] T019 [US1] Create App component shell in frontend/src/components/App.jsx (render 12 GiftCard components with scattered positioning)
+- [x] T020 [US1] Update frontend/src/main.jsx to mount App component
+- [x] T021 [US1] Add CSS for gift positioning and mobile scaling in frontend/src/styles/layout.css
+- [x] T022 [US1] Test US1: Verify all 12 gifts display correctly on desktop and mobile
 
 ---
 

@@ -39,6 +39,19 @@ body {
   pointer-events: none;
 }
 
+/* ASCII art fallback styling */
+.gift-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  color: #333;
+  text-align: center;
+}
+
 /* Mobile scaling - responsive design */
 @media (max-width: 768px) {
   .gift-container {
