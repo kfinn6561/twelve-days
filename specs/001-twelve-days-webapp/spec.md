@@ -14,6 +14,11 @@
 - Q: How should the app handle audio loading failures or browser autoplay blocks? → A: Show a visual indicator (icon/banner) that audio is unavailable, but allow all other interactions
 - Q: How should the twelve gifts be arranged on the page? → A: Scattered around the page in a visually pleasing manner
 - Q: How should the app handle gift images that fail to load? → A: Replace with ASCII art
+- Q: How should the gift layout adapt for mobile devices (screen width < 768px)? → A: Keep scattered layout but scale down gift sizes to fit viewport
+- Q: How long should the hover animation last (bounce/float cycle)? → A: Desktop: continuous animation while hovering; Mobile: 1 second duration
+- Q: What are the minimum browser versions that must be supported? → A: Last 2 major versions of each browser (Chrome, Firefox, Safari)
+- Q: If a user hovers briefly (less than 0.5 seconds), should the audio still play or be cancelled? → A: Play audio but stop immediately when hover ends, regardless of duration
+- Q: What visual indicator should show that gifts are interactive (before user hovers)? → A: Change cursor to pointer (hand icon) when hovering over gifts
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -92,9 +97,13 @@ When users hover over a gift, the corresponding lyrics line from that specific g
 ### Functional Requirements
 
 - **FR-001**: System MUST display twelve distinct gift images scattered around the page in a visually pleasing arrangement, one for each day of the carol
+- **FR-001a**: System MUST scale down gift sizes proportionally on mobile devices (screen width < 768px) while maintaining the scattered layout pattern to fit within the viewport
 - **FR-002**: System MUST respond to mouse hover events on each gift image
 - **FR-003**: System MUST animate gift images with a bounce or gentle floating motion when hovered over
+- **FR-003a**: On desktop devices, animation MUST continue as a loop while the mouse remains hovering over the gift
+- **FR-003b**: On mobile devices, animation MUST play for exactly 1 second after touch, then stop even if touch continues
 - **FR-004**: System MUST play audio of the corresponding verse when a gift is hovered
+- **FR-004a**: System MUST stop audio playback immediately when hover ends, regardless of how long the user hovered or how much audio has played
 - **FR-005**: System MUST display the specific gift's lyrics line at the top of the screen when a gift is hovered (e.g., "Two turtle doves" for Day 2, not the cumulative verse)
 - **FR-006**: System MUST stop previous audio playback when a new gift is hovered
 - **FR-007**: System MUST return gifts to their original visual state when hover ends
@@ -102,6 +111,7 @@ When users hover over a gift, the corresponding lyrics line from that specific g
 - **FR-009**: System MUST map each gift image to the correct verse number (day 1 through day 12)
 - **FR-010**: System MUST handle touch events on mobile devices the same as hover events (touching a gift immediately triggers animation, audio, and lyrics)
 - **FR-011**: System MUST provide visual feedback to indicate gifts are interactive
+- **FR-011a**: System MUST change the cursor to pointer (hand icon) when the user's cursor is positioned over any gift element
 - **FR-012**: System MUST load and display the app within a reasonable time on standard internet connections
 - **FR-013**: System MUST display a visual indicator (icon or banner) when audio is unavailable due to loading failures, browser autoplay policies, or unsupported formats, while continuing to allow visual and lyrical interactions
 - **FR-014**: System MUST replace failed gift images with ASCII art representations of the corresponding gift while maintaining all interactive functionality (animation, audio, lyrics)
@@ -112,7 +122,7 @@ When users hover over a gift, the corresponding lyrics line from that specific g
 - Audio will be created by obtaining a complete recording of "The Twelve Days of Christmas" carol and splitting it into individual verse segments
 - The carol lyrics are in the public domain and can be displayed freely
 - Users will primarily access the app on desktop/laptop computers with mouse input
-- Modern web browsers with HTML5 audio support are the target platform
+- Modern web browsers with HTML5 audio support are the target platform (last 2 major versions of Chrome, Firefox, and Safari)
 - Users will have audio enabled and working on their devices for full experience
 
 ### Key Entities
@@ -129,6 +139,6 @@ When users hover over a gift, the corresponding lyrics line from that specific g
 - **SC-003**: Audio playback begins within 200 milliseconds of hover interaction
 - **SC-004**: Lyrics appear at the top of the screen within 100 milliseconds of hover interaction
 - **SC-005**: Users can successfully interact with all twelve gifts sequentially without errors or delays
-- **SC-006**: The app functions correctly in the three most popular web browsers (Chrome, Firefox, Safari)
+- **SC-006**: The app functions correctly in the three most popular web browsers (Chrome, Firefox, Safari) with support for the last 2 major versions of each
 - **SC-007**: 90% of users can immediately understand the gifts are interactive without instructions
 - **SC-008**: The complete interaction cycle (hover, animation, audio, lyrics) feels smooth and responsive to users
