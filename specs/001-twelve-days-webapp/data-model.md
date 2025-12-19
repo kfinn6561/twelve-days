@@ -16,6 +16,7 @@ This document defines the data structures for the Twelve Days of Christmas inter
 Represents one of the twelve gifts from "The Twelve Days of Christmas" carol.
 
 **Properties**:
+
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | `id` | number | Yes | Unique identifier (1-12) corresponding to the day number |
@@ -61,6 +62,7 @@ Represents one of the twelve gifts from "The Twelve Days of Christmas" carol.
 Application-level state managed in the root App component.
 
 **Properties**:
+
 | Property | Type | Required | Default | Description |
 |----------|------|----------|---------|-------------|
 | `currentLyrics` | string | Yes | `''` | Lyrics currently displayed at top of screen |
@@ -86,6 +88,7 @@ Application-level state managed in the root App component.
 Managed within the `useImageFallback` custom hook for each GiftCard component.
 
 **Properties**:
+
 | Property | Type | Required | Default | Description |
 |----------|------|----------|---------|-------------|
 | `loading` | boolean | Yes | `true` | Whether image is currently loading |
