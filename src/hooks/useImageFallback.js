@@ -12,31 +12,36 @@ export function useImageFallback(imagePath, asciiArt) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    // Reset state when imagePath changes
-    setLoading(true);
-    setError(false);
-    setSrc(imagePath);
-
     // Create a new Image object to test loading
     const img = new Image();
+    let cancelled = false;
+
+    // Reset to loading state
+    setLoading(true);
+    setError(false);
 
     img.onload = () => {
-      setLoading(false);
-      setError(false);
-      setSrc(imagePath);
+      if (!cancelled) {
+        setLoading(false);
+        setError(false);
+        setSrc(imagePath);
+      }
     };
 
     img.onerror = () => {
-      // Convert ASCII art to data URL
-      const asciiDataUrl = convertAsciiToDataUrl(asciiArt);
-      setLoading(false);
-      setError(true);
-      setSrc(asciiDataUrl);
+      if (!cancelled) {
+        // Convert ASCII art to data URL
+        const asciiDataUrl = convertAsciiToDataUrl(asciiArt);
+        setLoading(false);
+        setError(true);
+        setSrc(asciiDataUrl);
+      }
     };
 
     img.src = imagePath;
 
     return () => {
+      cancelled = true;
       img.onload = null;
       img.onerror = null;
     };
