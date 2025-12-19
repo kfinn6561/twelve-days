@@ -1,0 +1,75 @@
+/* Sparkle animations */
+@keyframes sparkle {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle-burst {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.sparkle-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #ffd700, #ffed4e);
+  border-radius: 50%;
+  animation: sparkle 0.8s ease-out forwards;
+  box-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+}
+
+.sparkle-star {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(45deg, #fff, #ffd700);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation: sparkle 1s ease-out forwards;
+  filter: drop-shadow(0 0 6px #ffd700);
+}
+
+.sparkle-ring {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ffd700;
+  border-radius: 50%;
+  animation: sparkle-burst 0.6s ease-out forwards;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
