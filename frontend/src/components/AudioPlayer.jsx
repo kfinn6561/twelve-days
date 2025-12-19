@@ -16,18 +16,22 @@ function AudioPlayer({ audioPath, isPlaying, onError, onEnded }) {
       return;
     }
 
+    console.log('AudioPlayer: Creating new audio for path:', audioPath);
+
     // Create new audio instance
     const audio = new Audio(audioPath);
     audioRef.current = audio;
 
     // Set up event listeners
     const handleEnded = () => {
+      console.log('AudioPlayer: Audio ended');
       if (onEnded) {
         onEnded();
       }
     };
 
     const handleError = (e) => {
+      console.error('AudioPlayer: Audio load error', e);
       if (onError) {
         onError(e.error || new Error('Audio failed to load'));
       }
@@ -38,6 +42,7 @@ function AudioPlayer({ audioPath, isPlaying, onError, onEnded }) {
 
     // Cleanup
     return () => {
+      console.log('AudioPlayer: Cleaning up audio for path:', audioPath);
       audio.removeEventListener('ended', handleEnded);
       audio.removeEventListener('error', handleError);
       audio.pause();
@@ -46,12 +51,16 @@ function AudioPlayer({ audioPath, isPlaying, onError, onEnded }) {
   }, [audioPath, onError, onEnded]);
 
   useEffect(() => {
+    console.log('AudioPlayer: isPlaying changed to:', isPlaying, 'audioRef.current:', audioRef.current);
+
     if (!audioRef.current) {
+      console.warn('AudioPlayer: No audio ref available');
       return;
     }
 
     if (isPlaying) {
       // Attempt to play
+      console.log('AudioPlayer: Attempting to play audio');
       audioRef.current.play().catch((err) => {
         // Handle autoplay policy rejection
         console.warn('Audio playback failed:', err);
@@ -61,6 +70,7 @@ function AudioPlayer({ audioPath, isPlaying, onError, onEnded }) {
       });
     } else {
       // Stop audio
+      console.log('AudioPlayer: Stopping audio');
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }

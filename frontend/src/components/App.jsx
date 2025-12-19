@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import GiftCard from './GiftCard';
 import AudioIndicator from './AudioIndicator';
+import AudioPermissionPrompt from './AudioPermissionPrompt';
 import LyricsDisplay from './LyricsDisplay';
 import { gifts } from '../data/gifts';
 import '../styles/layout.css';
@@ -13,11 +14,24 @@ function App() {
   const [currentAudio, setCurrentAudio] = useState(null);
   const [audioError, setAudioError] = useState(false);
   const [audioAvailable, setAudioAvailable] = useState(true);
+  const [showAudioPrompt, setShowAudioPrompt] = useState(true);
   const audioRef = useRef(null);
+  const audioEnabledRef = useRef(false);
+
+  const handleEnableAudio = () => {
+    // User has clicked - this provides the necessary gesture for audio
+    audioEnabledRef.current = true;
+    setShowAudioPrompt(false);
+  };
 
   const handleGiftHover = (gift) => {
     setCurrentLyrics(gift.lyrics);
     setCurrentAudio(gift.id);
+
+    // Don't try to play audio if user hasn't enabled it yet
+    if (!audioEnabledRef.current) {
+      return;
+    }
 
     // Reset audio error state when user interacts
     if (audioError) {
@@ -74,6 +88,10 @@ function App() {
 
   return (
     <div className="app">
+      <AudioPermissionPrompt
+        show={showAudioPrompt}
+        onDismiss={handleEnableAudio}
+      />
       <LyricsDisplay lyrics={currentLyrics} />
       <AudioIndicator show={audioError} />
 
