@@ -115,7 +115,7 @@ describe('useAudio Hook - User Story 3', () => {
     await act(async () => {
       try {
         await result.current.playAudio('/audio1.mp3');
-      } catch (e) {
+      } catch {
         // Expected to fail
       }
     });

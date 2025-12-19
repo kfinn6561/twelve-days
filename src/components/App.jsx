@@ -11,7 +11,6 @@ import '../styles/layout.css';
  */
 function App() {
   const [currentLyrics, setCurrentLyrics] = useState('');
-  const [currentAudio, setCurrentAudio] = useState(null);
   const [audioError, setAudioError] = useState(false);
   const [showAudioPrompt, setShowAudioPrompt] = useState(true);
   const audioRef = useRef(null);
@@ -25,7 +24,6 @@ function App() {
 
   const handleGiftHover = (gift) => {
     setCurrentLyrics(gift.lyrics);
-    setCurrentAudio(gift.id);
 
     // Don't try to play audio if user hasn't enabled it yet
     if (!audioEnabledRef.current) {
@@ -49,7 +47,7 @@ function App() {
 
     // Set up event listeners
     audio.addEventListener('ended', () => {
-      setCurrentAudio(null);
+      // Audio ended
     });
 
     audio.addEventListener('error', () => {
@@ -68,7 +66,6 @@ function App() {
 
   const handleGiftUnhover = () => {
     setCurrentLyrics('');
-    setCurrentAudio(null);
 
     // Stop audio on unhover (desktop behavior)
     if (audioRef.current) {

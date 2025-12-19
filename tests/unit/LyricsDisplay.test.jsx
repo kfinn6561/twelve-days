@@ -46,7 +46,6 @@ describe('LyricsDisplay Component - User Story 4', () => {
     const { container } = render(<LyricsDisplay lyrics={lyrics} />);
 
     const displayElement = container.firstChild;
-    const styles = window.getComputedStyle(displayElement);
 
     // Fixed positioning expected from CSS
     expect(displayElement).toHaveClass('lyrics-display');
