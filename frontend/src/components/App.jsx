@@ -18,6 +18,10 @@ function App() {
   const handleGiftHover = (gift) => {
     setCurrentLyrics(gift.lyrics);
     setCurrentAudio(gift.id);
+    // Reset audio error state when user interacts (they've provided user gesture)
+    if (audioError) {
+      setAudioError(false);
+    }
   };
 
   const handleGiftUnhover = () => {
@@ -27,8 +31,16 @@ function App() {
 
   const handleAudioError = (error) => {
     console.error('Audio error:', error);
-    setAudioError(true);
-    setAudioAvailable(false);
+    // Only show persistent error for actual load failures, not autoplay blocks
+    // Autoplay errors are typically DOMException with name 'NotAllowedError'
+    const isAutoplayBlock = error?.name === 'NotAllowedError' || error?.message?.includes('play() request was interrupted');
+
+    if (!isAutoplayBlock) {
+      // Real error - file missing, corrupt, etc.
+      setAudioError(true);
+      setAudioAvailable(false);
+    }
+    // For autoplay blocks, just log but don't show error (user interaction will fix it)
   };
 
   const handleAudioEnded = () => {
