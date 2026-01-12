@@ -1,13 +1,18 @@
 import { useState, useRef } from 'react';
 import GiftCard from './GiftCard';
+import GiftDetailPage from './GiftDetailPage';
+import NotFound from './NotFound';
 import AudioIndicator from './AudioIndicator';
 import AudioPermissionPrompt from './AudioPermissionPrompt';
 import LyricsDisplay from './LyricsDisplay';
 import { gifts } from '../data/gifts';
+import { useRouter, matchRoute } from '../hooks/useRouter';
 import '../styles/layout.css';
+import '../styles/backButton.css';
+import '../styles/detailPage.css';
 
 /**
- * App component - Root component managing global state and layout
+ * App component - Root component managing global state, layout, and routing
  */
 function App() {
   const [currentLyrics, setCurrentLyrics] = useState('');
@@ -15,6 +20,10 @@ function App() {
   const [showAudioPrompt, setShowAudioPrompt] = useState(true);
   const audioRef = useRef(null);
   const audioEnabledRef = useRef(false);
+
+  // Routing
+  const { currentPath, navigate } = useRouter();
+  const route = matchRoute(currentPath);
 
   const handleEnableAudio = () => {
     // User has clicked - this provides the necessary gesture for audio
@@ -74,6 +83,32 @@ function App() {
     }
   };
 
+  const handleGiftNavigate = (giftId) => {
+    // Stop any playing audio before navigation
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    setCurrentLyrics('');
+    navigate(`/gift/${giftId}`);
+  };
+
+  // Detail page route
+  if (route.type === 'detail') {
+    return (
+      <GiftDetailPage
+        giftId={route.id}
+        onBack={() => navigate('/')}
+      />
+    );
+  }
+
+  // 404 route
+  if (route.type === 'notfound') {
+    return <NotFound onBack={() => navigate('/')} />;
+  }
+
+  // Home page route (main gift gallery)
   return (
     <div className="app">
       <AudioPermissionPrompt
@@ -90,6 +125,7 @@ function App() {
             gift={gift}
             onHover={handleGiftHover}
             onUnhover={handleGiftUnhover}
+            onNavigate={handleGiftNavigate}
           />
         ))}
       </div>
