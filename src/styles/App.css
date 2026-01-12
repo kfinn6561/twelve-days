@@ -1,0 +1,89 @@
+/* Base styles for Twelve Days of Christmas app */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background:
+    /* Subtle snowflake pattern overlay */
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    /* Rich Christmas gradient */
+    linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Add subtle texture */
+  background-attachment: fixed;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Scattered layout grid - gifts positioned absolutely */
+.gift-container {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gift-container:hover {
+  transform: scale(1.05);
+}
+
+.gift-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ASCII art fallback styling */
+.gift-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  color: #333;
+  text-align: center;
+}
+
+/* Mobile scaling - responsive design */
+@media (max-width: 768px) {
+  .gift-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Scale down gift sizes proportionally on mobile */
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gift-container {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Ensure gifts stay within viewport */
+@media (max-width: 768px) {
+  .gift-container[data-x] {
+    left: calc(var(--x) * 1vw - 30px) !important;
+    top: calc(var(--y) * 1vh - 30px) !important;
+  }
+}

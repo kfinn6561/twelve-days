@@ -1,0 +1,103 @@
+/* Lyrics Display Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+
+.lyrics-display {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 800px;
+  width: 90%;
+  background: linear-gradient(135deg, rgba(26, 58, 82, 0.95) 0%, rgba(44, 83, 100, 0.95) 100%);
+  color: #ffffff;
+  padding: 24px 40px;
+  text-align: center;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  animation: fadeSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lyrics-display::before {
+  content: '♪';
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  opacity: 0.4;
+}
+
+.lyrics-display::after {
+  content: '♪';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  opacity: 0.4;
+}
+
+.lyrics-display__text {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #f0f8ff;
+}
+
+/* Enhanced entrance animation */
+@keyframes fadeSlideIn {
+  from {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+    scale: 0.95;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .lyrics-display {
+    padding: 20px 32px;
+    top: 20px;
+  }
+
+  .lyrics-display__text {
+    font-size: 22px;
+  }
+
+  .lyrics-display::before,
+  .lyrics-display::after {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lyrics-display {
+    padding: 16px 24px;
+    top: 15px;
+  }
+
+  .lyrics-display__text {
+    font-size: 18px;
+  }
+
+  .lyrics-display::before,
+  .lyrics-display::after {
+    font-size: 20px;
+    display: none; /* Hide music notes on very small screens */
+  }
+}
