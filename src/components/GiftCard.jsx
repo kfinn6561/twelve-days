@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { useImageFallback } from '../hooks/useImageFallback';
 import '../styles/animations.css';
 import '../styles/layout.css';
@@ -115,5 +116,22 @@ function GiftCard({ gift, onHover, onUnhover, onNavigate }) {
     </div>
   );
 }
+
+GiftCard.propTypes = {
+  gift: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    imagePath: PropTypes.string.isRequired,
+    asciiArt: PropTypes.string.isRequired,
+    position: PropTypes.shape({
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired,
+    }).isRequired,
+    shortName: PropTypes.string.isRequired,
+  }).isRequired,
+  onHover: PropTypes.func,
+  onUnhover: PropTypes.func,
+  onNavigate: PropTypes.func,
+};
 
 export default GiftCard;

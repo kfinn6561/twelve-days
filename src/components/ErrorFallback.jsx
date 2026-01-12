@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import BackButton from './BackButton';
 
 function ErrorFallback({ message, onBack }) {
@@ -13,5 +14,10 @@ function ErrorFallback({ message, onBack }) {
     </div>
   );
 }
+
+ErrorFallback.propTypes = {
+  message: PropTypes.string.isRequired,
+  onBack: PropTypes.func.isRequired,
+};
 
 export default ErrorFallback;

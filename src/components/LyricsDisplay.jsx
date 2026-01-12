@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import '../styles/lyrics.css';
 
 /**
@@ -16,5 +17,9 @@ function LyricsDisplay({ lyrics }) {
     </div>
   );
 }
+
+LyricsDisplay.propTypes = {
+  lyrics: PropTypes.string,
+};
 
 export default LyricsDisplay;

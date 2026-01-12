@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function BackButton({ onClick }) {
   return (
     <button
@@ -9,5 +11,9 @@ function BackButton({ onClick }) {
     </button>
   );
 }
+
+BackButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export default BackButton;

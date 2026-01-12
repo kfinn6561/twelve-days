@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import '../styles/layout.css';
 
 /**
@@ -24,5 +25,10 @@ function AudioPermissionPrompt({ show, onDismiss }) {
     </div>
   );
 }
+
+AudioPermissionPrompt.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onDismiss: PropTypes.func.isRequired,
+};
 
 export default AudioPermissionPrompt;

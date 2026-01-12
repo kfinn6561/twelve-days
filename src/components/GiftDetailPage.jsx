@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useContentLoader } from '../hooks/useContentLoader';
 import { gifts } from '../data/gifts';
 import BackButton from './BackButton';
@@ -107,5 +108,10 @@ function GiftDetailPage({ giftId, onBack }) {
     </div>
   );
 }
+
+GiftDetailPage.propTypes = {
+  giftId: PropTypes.number.isRequired,
+  onBack: PropTypes.func.isRequired,
+};
 
 export default GiftDetailPage;

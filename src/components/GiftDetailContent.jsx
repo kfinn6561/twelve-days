@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function GiftDetailContent({ content }) {
   if (!content) {
     return null;
@@ -54,5 +56,27 @@ function GiftDetailContent({ content }) {
     </article>
   );
 }
+
+GiftDetailContent.propTypes = {
+  content: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
+    sections: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        heading: PropTypes.string.isRequired,
+        paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired,
+        citations: PropTypes.arrayOf(PropTypes.string),
+        list: PropTypes.arrayOf(PropTypes.string),
+      })
+    ).isRequired,
+    references: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+      })
+    ),
+  }),
+};
 
 export default GiftDetailContent;
