@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import '../styles/layout.css';
 
 /**
@@ -19,5 +20,9 @@ function AudioIndicator({ show }) {
     </div>
   );
 }
+
+AudioIndicator.propTypes = {
+  show: PropTypes.bool.isRequired,
+};
 
 export default AudioIndicator;

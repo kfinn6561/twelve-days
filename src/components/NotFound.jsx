@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function NotFound({ onBack }) {
   return (
     <div className="error-fallback">
@@ -14,5 +16,9 @@ function NotFound({ onBack }) {
     </div>
   );
 }
+
+NotFound.propTypes = {
+  onBack: PropTypes.func.isRequired,
+};
 
 export default NotFound;
